@@ -1,0 +1,2 @@
+# LFI-Lab
+Repo demonstrating Local File Inclusion vulnerability how its exploited and several defense scenarios that could be placed
