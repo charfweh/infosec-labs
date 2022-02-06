@@ -10,8 +10,8 @@ def start():
     return render_template("index.html")
 
 
-@app.route("/home", methods=['GET'])
-def home():
+@app.route("/lfidemo1", methods=['GET'])
+def lfidemo1():
     # whitelistfilename = ["text/chapter1.txt","text/chapter2.txt","text/default.txt","text/intro.txt"]
     filename = request.args.get('filename')
     print("[+] filename here",filename)
@@ -32,6 +32,23 @@ def home():
 #     f = open(filename,'r')
 #     read = f.read()
 #     return render_template("index.html",read = read)
+@app.route("/lfidemo2",methods=['GET'])
+def lfidemo2():
+    whitelistfilename = ["text/chapter1.txt","text/chapter2.txt","text/default.txt","text/intro.txt"]
+    filename = request.args.get('filename')
+    print("[+] filename here",filename)
+    if filename not in whitelistfilename:
+        return render_template("error.html")
+    if filename == "":
+        filename = "text/default.txt"
+    print("attempting to open",filename)
+    f = open(filename,'r')
+    read = f.read()
+    return render_template("index.html",read = read)
+
+@app.route("/homepage")
+def homepage():
+    return render_template("homepage.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

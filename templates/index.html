@@ -80,18 +80,31 @@
 					<div class="panel-heading">Local file inclusion/path traversal</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form method="get" action="/home" enctype="multipart/form-data">
-                					<div class="form-group">
-									<label>Selects</label>
-									<select name="filename" class="form-control">
-										<option value="text/intro.txt">Intro</option>
-										<option value="text/chapter1.txt">Chapter 1</option>
-										<option value="text/chapter2.txt">Chapter 2</option>
-									</select>
+						<form method="get" action="/lfidemo1" enctype="multipart/form-data">
+												<div class="form-group">
+								<label>LFI demo1</label>
+								<select name="filename" class="form-control">
+									<option value="text/intro.txt">Intro</option>
+									<option value="text/chapter1.txt">Chapter 1</option>
+									<option value="text/chapter2.txt">Chapter 2</option>
+								</select>
+							</div>
+											<button class="btn btn-primary" type="submit">Submit Button</button>
+
+					</form>
+					<form method="get" action="/lfidemo2" enctype="multipart/form-data">
+											<div class="form-group">
+							<label>LFI demo 2</label>
+							<select name="filename" class="form-control">
+								<option value="text/intro.txt">Intro</option>
+								<option value="text/chapter1.txt">Chapter 1</option>
+								<option value="text/chapter2.txt">Chapter 2</option>
+							</select>
+						</div>
+										<button class="btn btn-primary" type="submit">Submit Button</button>
 								</div>
-               			    <button class="btn btn-primary" type="submit">Submit Button</button>
-               			</div>
-						</form>
+								</div>
+				</form>
 					</div>
 				</div>
 			</div><!-- /.col-->
