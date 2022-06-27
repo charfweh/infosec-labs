@@ -1,9 +1,9 @@
 from flask import Flask, request, url_for, render_template, redirect
-
+import re
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.config['DEBUG'] = True
-
+import os
 
 @app.route("/")
 def start():
@@ -45,6 +45,15 @@ def lfidemo2():
     f = open(filename,'r')
     read = f.read()
     return render_template("index.html",read = read)
+
+# REGEX file match
+# @app.route("/lfidemo3",methods=['GET'])
+# def lfidemo3():
+#     filename = request.args.get('filename')
+#     filepattern = re.search('(^[a-zA-Z0-9]+)',filename)
+#     print("[+] filename here",filename)
+#     print("[+] file patteern",filepattern)
+    
 
 @app.route("/homepage")
 def homepage():
