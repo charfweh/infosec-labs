@@ -1,0 +1,11 @@
+MYSQL_HOST=yourhost
+MYSQL_USER=yourusername
+MYSQL_PASSWORD=yourpassword
+MYSQL_DB=db_name
+SECRET_KEY=iamsecret
+
+Note:
+- The values are the ones you used to setup mysql
+- Secret_key can be anything
+
+

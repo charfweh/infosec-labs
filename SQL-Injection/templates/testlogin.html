@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> SignUp and Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='test.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="{{ url_for('register') }}" method="post">
+                {% if message is defined and message %}
+			        <div class="alert alert-warning">{{ message }}</div>
+		        {% endif %}
+                <h1 style="padding-top: 15px"> Create Account</h1>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+                <button style="margin-top:10px" type="submit"> Create Account</button>
+                <h5>Already have an account! <a class="ghost" id="signIn" style="color:blue;"><u>Sign In</u></a></h5>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="{{ url_for('login') }}" method="post">
+                {% if message is defined and message %}
+			        <div class="alert alert-warning">{{ message }}</div>
+		        {% endif %}
+                <h1 style="padding-bottom: 15px"> Login Now</h1>
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <p>Having difficulty? drop a main to admin@lab.com<p>
+                <button style="margin-top: 10px" type="submit"> Login</button>
+                <h5>New to here! <a class="ghost" id="signUp" style="color:blue;"><u>Sign Up</u></a></h5>
+            </form>
+            
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <img src="/static/login.jpg" alt="movie-1" height="350" width="350"/>
+                    
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img src="/static/login.jpg" alt="movie-2" height="350" width="350"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
+</body>
+</html>
