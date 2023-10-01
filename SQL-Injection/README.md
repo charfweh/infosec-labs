@@ -68,7 +68,7 @@ This will expose app.py to your local network.
 
 The flaw exists in `email varchar(20)`, what sql truncation attack does is you put in `email` thats longer than `20` by inserting `whitespace`, resulting in duplication of `email` and basically you have `admin account` with your own `password`. 
 
-For more reading, refer to the blog [blog here]
+For more reading, refer to the blog https://charfweh.github.io/posts/lab-sql-truncate/
 
 
 
