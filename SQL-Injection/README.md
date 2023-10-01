@@ -70,19 +70,6 @@ The flaw exists in `email varchar(20)`, what sql truncation attack does is you p
 
 For more reading, refer to the blog [blog here]
 
-## sql modes
 
-- original sql mode
-```bash
-STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
-```
-
-- modified sql mode
-```bash
-set session sql_mode =  'ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-```
-
-- STRICT_TRANS_TABLES:
-- https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_strict_trans_tables
 
 
